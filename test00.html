@@ -1,11 +1,550 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
     <head>
-        <title>teat00</title>
+        <meta charset="UTF-8">
+        <title>HW06</title>
+        <style>
+            * {
+                margin: 0;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+            header {
+                background-color: rgb(235, 235, 235);
+                padding: 20px 55px;
+                color:rgb(0, 0, 0);
+                font-size: 30px;
+                font-weight: 1000;
+                font-family: '蘋方-繁';
+                text-align: center;
+
+            }
+            nav {
+                background-color: rgb(240, 240, 240);
+                padding: 20px;
+                color:rgb(0, 0, 0);
+                font-size: 23px;
+                font-weight: 1000;
+                font-family: '蘋方-繁';
+                text-align: center;
+            }
+            section {
+                padding: 20px;
+                margin-left: 50px;
+                color:rgb(0, 118, 186);
+                font-size: 23px;
+                font-weight: 1000;
+                font-family: '蘋方-繁';
+                text-align: left;
+                
+            }
+            aside {
+                background-color: rgb(255, 255, 255);
+                padding: 0;
+                color:rgb(0, 0, 0);
+                font-size: 23px;
+                font-weight: 1000;
+                font-family: '蘋方-繁';
+                text-align: center;
+                float:right;
+            }
+            footer {
+                background-color: rgb(235, 235, 235);
+                margin-top: 30px;
+                color:rgb(0, 0, 0);
+                font-size: 20px;
+                font-weight: 1000;
+                font-family: '蘋方-繁';
+                text-align: center;
+                clear: both;
+            }            
+            li {
+                text-align: left;
+            }
+            a {
+                color: rgb(134, 134, 134);
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            :link, :visited {
+                text-decoration: none;
+            }
+
+            .drop-down-menu {
+                display: inline-block;
+                font-size: 13px;
+            }
+            .drop-down-menu li {
+                position: relative;
+                white-space: nowrap;
+            }
+            .drop-down-menu > li {
+                float: left;
+            }
+            .drop-down-menu a {
+                background-color: rgba(255, 255, 255, 0);
+                color: rgb(39, 72, 110);
+                display: block;
+                padding: 5px 30px;
+                text-decoration: none;
+                line-height: 30px;
+                margin: 0;
+            }
+            .drop-down-menu a:hover {
+                background-color: rgb(255, 255, 255);
+            }
+            .drop-down-menu li:hover > a {
+                background-color: rgb(255, 255, 255);
+            }
+            .drop-down-menu ul {
+                background-color: rgb(221, 236, 255);
+                position: absolute;
+                z-index: -99;
+                top: 100%;
+                min-width: 180px;
+                opacity: 0;
+                -webkit-transition: opacity 0.3s;
+                transition: opacity 0.3s;
+            }
+            .drop-down-menu li:hover > ul{
+                left: -1px;
+                z-index: 1;
+                opacity: 1;
+                -webkit-transition: opacity 0.3s;
+                transition: opacity 0.3s;
+            }
+            .drop-down-menu ul a:hover {
+                background-color: rgb(39, 72, 110);
+                color:rgb(255, 255, 255);
+            }
+            .drop-down-menu li:hover > ul {
+                display: block;
+            }
+            .drop-down-menu ul ul {
+                display: none;
+                z-index: -10;
+                top: 10px;
+            }
+            .drop-down-menu li li:hover > a {
+                background-color: rgb(39, 72, 110);
+                color: rgb(255, 255, 255);
+            }
+            .drop-down-menu li:hover > ul ul {
+                z-index: 10;
+            }
+            .drop-down-menu ul li:hover ul {
+                left: 90%;
+            }
+            
+            .nav_list-item {
+                color:rgb(75, 75, 75);
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 1;
+                margin-bottom: 12px;
+                text-align: left;
+            }
+            .nav-triangle::after {
+                display: inline-block;
+                width: 0;
+                height: 0;
+                margin-left: .3em;
+                vertical-align: middle;
+                content: " ";
+                border-top: .3em solid;
+                border-right: .3em solid transparent;
+                border-left: .3em solid transparent;
+            }
+
+            .nav_li {
+                display: inline-block;
+            }
+            .nav_list-item-li {
+                color:rgb(75, 75, 75);
+                font-size: 15px;
+                font-weight: 700;
+                line-height: 1;
+                margin-bottom: 12px;
+                text-align: left;
+            }
+            .article_div {
+                display: grid;
+                grid-column-gap: 10px;
+                grid-template-columns:repeat(2, 1fr);
+                margin: 0 auto;
+                max-width: 800px;
+                padding: 0 40px 28px;
+            }
+            .article_section {
+                padding: 0;
+                margin: 0;
+                margin-top: 50px;
+                border: 0;
+            }
+            .article_section-header {
+                color:rgb(0, 118, 186);
+                font-size: 23px;
+                font-weight: 700;
+                line-height: 1;
+                margin-bottom: 12px;
+            }
+            .article-content {
+                padding: 0;
+                margin: 0;
+                color:rgb(0, 0, 0);
+                font-size: 18px;
+                list-style-type: none;
+                line-height: 1;
+                margin-bottom: 12px;
+                text-align: left;
+            }
+            .table {
+                padding-inline-start: 27px;
+            }
+            .table_div {
+                display: grid;
+                grid-column-gap: 50px;
+                grid-template-columns: repeat(2, 1fr);
+                margin: 0 auto;
+            }
+            .table-content {
+                padding: 0;
+                margin: 0;
+                color:rgb(0, 0, 0);
+                font-size: 18px;
+                line-height: 1;
+                margin-bottom: 12px;
+                text-align: left;
+            }
+            .aside_div {
+                padding: 10px;
+                margin: 10px 20px 0 0;
+                background-color: rgb(219, 219, 219);
+                position: fixed;
+                animation: aside_div_bgcolor-change 1s infinite;
+            }
+            @keyframes aside_div_bgcolor-change {
+                0% { background-color: rgb(219, 219, 219); }
+                50% { background-color: rgb(167, 167, 167); }
+            }
+            .aside_section {
+                padding: 0;
+                margin: 0;
+                color:rgb(0, 0, 0);
+            }
+            .aside_section-header {
+                color:rgb(0, 0, 0);
+                font-size: 25px;
+                font-weight: 700;
+                line-height: 1;
+                margin-bottom: 12px;
+            }
+            .aside-content {
+                color: rgb(0, 0, 0);
+                font-size: 19px;
+                text-align: left;
+            }
+            .baozi-AD {
+                background: url(../Picture/包子\ 耶.png) no-repeat center;
+                background-size: 200px 200px;
+                display: block;
+                width: 200px;
+                height: 180px;
+            }
+            .footer_div {
+                display: grid;
+                grid-column-gap: 100px;
+                grid-template-columns:repeat(3, 1fr);
+                margin: 0 auto;
+                max-width: 800px;
+                padding: 0 20px 28px;
+            }
+            .footer_section {
+                margin: 0;
+                border: 0;
+                padding: 0;
+            }
+            .footer_section-header {
+                color:rgb(134, 134, 134);
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 1;
+                margin-bottom: 12px;
+            }
+            .footer_list-item {
+                color:rgb(134, 134, 134);
+                font-size: 15px;
+                font-weight: 700;
+                line-height: 1;
+                margin-bottom: 12px;
+                text-align: left;
+            }
+            .hidden_ul-dot {
+                list-style-type: none;
+                text-align: left;
+                padding-inline-start: 0;
+            }
+            .footer-nav_li{
+                display: inline-block;
+            }
+            .footer-nav_li::after {
+                content: ' | ';
+                color:rgba(0, 0, 0, 0.6);
+            }
+            .footer-nav_li:last-child::after {
+                content: ' ';
+            }
+            .baozi_div {
+                position: relative;
+                display: inline-block;
+                width: 42px;
+                height: 42px;
+            }
+            .baozi_div .baozi-bottom{
+                position: relative;
+                display: inline-block;
+                width: 42px;
+                height: 42px;
+            }
+            .baozi_div .baozi-top {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 99;
+                width: 42px;
+                height: 42px;
+            }
+            .baozi_div:hover .baozi-top {
+                display: inline;
+                width: 42px;
+                height: 42px;
+            }
+            .baozi_div:hover .baozi-bottom {
+                display: none;
+                width: 42px;
+                height: 42px;
+            }
+            .header-title {
+                text-align: center;
+                padding-right: 35px;
+                position: relative;
+                display: inline-block;
+            }
+
+            #gotop {
+                background: url(../Picture/藍色箭頭.png) no-repeat center rgb(228, 242, 255);
+                background-size: 25px 25px;
+                display: block;
+                width: 52px;
+                height: 50px;
+                border: 1px solid #378bd6;
+                border-radius: 25px;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 99;
+                opacity: 0.3;
+                transition-duration: 0.5s;
+            }
+            #gotop:hover {
+                opacity: 1;
+            }
+            
+        </style>
     </head>
     <body>
-        <h1>Hello, world</h1>
-        <div>test01</div>
-        <div>test02</div>
-    </body>
+        <header id="top">
+            <div class="baozi_div" style="float: left;">
+                <a href="" style="display: inline-block; height: 42px;">
+                    <img src="../Picture/包子 笑.png" class="baozi-bottom">
+                    <img src="../Picture/包子 耶.png" class="baozi-top">
+                </a>
+            </div>
+            <span class="header-title">
+                火腿公司
+            </span>
+        </header>
+        <nav>
+            <div>
+                <ul class="hidden_ul-dot drop-down-menu" style="text-align: center;">
+                    <li class="nav_li"><a class="nav_list-item" href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW06/HW06.html">首頁</a>
+                    </li>
+                    <li class="nav_li"><a class="nav_list-item nav-triangle" href="">服務項目</a>
+                        <ul class="hidden_ul-dot" style="text-align: center;">
+                            <li><a class="nav_list-item-li" style="text-align: right;" href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW02/HW02.html">ＨＷ０２</a></li>
+                            <li><a class="nav_list-item-li" style="text-align: right;" href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW03/HW03.html">ＨＷ０３</a></li>
+                            <li><a class="nav_list-item-li" style="text-align: right;" href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW04/HW04.html">ＨＷ０４</a></li>
+                            <li><a class="nav_list-item-li" style="text-align: right;" href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW05/HW05.html">ＨＷ０５</a></li>
+                            <li><a class="nav_list-item-li" style="text-align: right;" href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW06/HW06.html">ＨＷ０６</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav_li"><a class="nav_list-item nav-triangle" href="">專案介紹</a>
+                        <ul class="hidden_ul-dot" style="text-align: center;">
+                            <li><a class="nav_list-item-li" href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW02/HW02.html">Table表格製作</a></li>
+                            <li><a class="nav_list-item-li" href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW03/HW03.html">Div/Span</a></li>
+                            <li><a class="nav_list-item-li" href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW04/HW04.html">Style/Box-Shadow</a></li>
+                            <li><a class="nav_list-item-li" href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW05/HW05.html">Internal Style Sheet</a></li>
+                            <li><a class="nav_list-item-li" href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW06/HW06.html">HTML Layout</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav_li"><a class="nav_list-item nav-triangle" href="">常用連結</a>
+                        <ul class="hidden_ul-dot" style="text-align: center;">
+                            <li><a class="nav_list-item-li" href="https://www.google.com.tw/">Ｇｏｏｇｌｅ</a>
+                            </li>
+                            <li><a class="nav_list-item-li nav-triangle" href="">影片專區  </a>
+                                <ul class="hidden_ul-dot" style="text-align: center;">
+                                    <li><a class="nav_list-item-li" href="https://www.youtube.com">ＹｏｕＴｕｂｅ</a></li>
+                                    <li><a class="nav_list-item-li" href="https://www.netflix.com/">Ｎｅｔｆｌｉｘ</a></li>
+                                    <li><a class="nav_list-item-li" href="https://ani.gamer.com.tw">巴哈姆特動畫瘋</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="nav_list-item-li nav-triangle" href="">社群網站   </a>
+                                <ul class="hidden_ul-dot" style="text-align: center;">
+                                    <li><a class="nav_list-item-li" href="https://www.facebook.com">Ｆａｃｅｂｏｏｋ</a></li>
+                                    <li><a class="nav_list-item-li" href="https://www.plurk.com/">噗浪</a></li>
+                                    <li><a class="nav_list-item-li" href="https://www.instagram.com">ＩＧ</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div>
+            <article style="float: left; width: 75%;">
+                <div class="article_div">
+                    <div>
+                        <section class="article_section">
+                            <h3 class="article_section-header">基本資料</h3>
+                            <ul style="padding-left: 0;">
+                                <li class="article-content">姓名：野草</li>
+                                <li class="article-content">生日：1988/07/20</li>
+                                <li class="article-content">電話：0989-637187</li>
+                                <li class="article-content">電郵：cao3318787@huotui.com</li>
+                                <li class="article-content">居住地址：火腿市北區</li>
+                                <li class="article-content">駕駛執照：大型重型機車駕照、普通小型車駕照</li>
+                            </ul>
+                        </section>
+                        <section class="article_section">
+                            <h3 class="article_section-header">學歷</h3>
+                            <ul style="padding-left: 0;">
+                                <li class="article-content">火腿大學 經濟系</li>
+                            </ul>
+                        </section>
+                        <section class="article_section">
+                            <h3 class="article_section-header">語言能力</h3>
+                            <ul style="padding-left: 0;">
+                                <li class="article-content">中文：精通</li>
+                                <li class="article-content">台語：精通</li>
+                                <li class="article-content">英文：普通</li>
+                                <li class="article-content">日文：普通（JLPT—N4）</li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div>
+                        <section class="article_section">
+                            <h3 class="article_section-header">電腦技能</h3>
+                                <div class="table_div">
+                                    <div>
+                                        <ul class="table">
+                                            <li class="table-content">Word</li>
+                                            <li class="table-content">Excel</li>
+                                            <li class="table-content">PowerPoint</li>
+                                            <li class="table-content">Pages</li>
+                                            <li class="table-content">Numbers</li>
+                                            <li class="table-content">Keynote</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul class="table">
+                                            <li class="table-content">MediBangPaint</li>
+                                            <li class="table-content">Clip Studio Paint</li>
+                                            <li class="table-content">HTML  CSS</li>
+                                            <li class="table-content">FL Studio</li>
+                                        </ul>
+                                    </div>
+                                </div>                   
+                            </section>
+                        </section>
+                        <section class="article_section" style="clear: both;">
+                            <h3 class="article_section-header">其他技能</h3>
+                            <ul style="padding-left: 0;">
+                                <li class="article-content">鋼琴</li>
+                                <li class="article-content">爵士鼓</li>
+                                <li class="article-content">吉他</li>
+                            </ul>
+                        </section>
+                        <section class="article_section">
+                            <h3 class="article_section-header">經歷</h3>
+                            <ul style="padding-left: 0;">
+                                <li class="article-content">社團經驗：火腿大學吉他社、管弦樂社。</li>
+                                <li class="article-content">大學專題：分析產業，主要是分析五家紡織業公司的近況跟未來展望，並比較他們的優劣。</li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </article>
+            <aside style="float: right; width: 20%;">
+                <div class="aside_div">
+                    <section class="aside_section">
+                        <a style="text-decoration: none;" href="https://t.me/addstickers/roubao"><h3 class="aside_section-header">可愛包子來了！</h3>
+                        <div class="aside-content">
+                            從可愛到搞笑應有盡有，用個性豐富的包子讓你的聊天室更豐富ㄅ！
+                        </div>
+                        </a>
+                        <div class="aside-content">
+                            <a class="baozi-AD" href="https://t.me/addstickers/roubao"></a>
+                        </div>
+                        <div class="aside-content">
+                            <a style="color: rgb(39, 72, 110);" href="https://t.me/addstickers/roubao">現在就去下載→</a>
+                        </div>
+                    </section>
+                </div>
+            </aside>
+        </div>
+        <footer>
+            <h2 style="padding: 25px 0; font-size: 25px; color: rgb(100, 100, 100);"></h2>
+            <div class="footer_div">
+                <div>
+                    <section class="footer_section">
+                        <h3 class="footer_section-header">關於野草</h3>
+                        <ul class="hidden_ul-dot">
+                            <li class="footer_list-item"><a href="https://www.plurk.com/">噗浪</a></li>
+                            <li class="footer_list-item"><a href="https://www.instagram.com/">ＩＧ</a></li>
+                        </ul>
+                    </section>
+                </div>
+                <div>
+                    <section class="footer_section">
+                        <h3 class="footer_section-header">聯絡資訊</h3>
+                        <ul class="hidden_ul-dot">
+                            <li class="footer_list-item"><a href="mailto:cao3318787@huotui.com">E-mail</a></li>
+                            <li class="footer_list-item">手機：0989-637187</li>
+                        </ul>
+                    </section>
+                </div>
+                <div>
+                    <section class="footer_section">
+                        <h3 class="footer_section-header">關於火腿公司</h3>
+                        <ul class="hidden_ul-dot">
+                            <li class="footer_list-item"><a href="">創辦人</a></li>
+                            <li class="footer_list-item"><a href="">公司地址</a></li>
+                            <li class="footer_list-item"><a href="">聯繫方式</a></li>
+                            <li class="footer_list-item"><a href="">新聞</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+                <ul class="hidden_ul-dot" style="clear: both; text-align: center;">
+                    <li class="footer_list-item footer-nav_li"><a href="">隱私權</a></li>
+                    <li class="footer_list-item footer-nav_li"><a href="">服務條款</a></li>
+                    <li class="footer_list-item footer-nav_li"><a href="">支援</a></li>
+                    <li class="footer_list-item footer-nav_li"><a href="">回報問題</a></li>
+                </ul>      
+        </footer>
+        <a id="gotop" href="#top"></a>
+    <script async src="https://drv.tw/inc/wd.js"></script></body>
 </html>
