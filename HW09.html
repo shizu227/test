@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>HW09</title>
+    <script>
+        function fun1(){
+            var height = document.getElementById("height").value;
+            var weight = document.getElementById("weight").value;
+            var result=(weight/((height/100)**2)).toFixed(2);
+            document.getElementById("result").value = result;
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            font-size: 35px;
+        }
+        table {
+            border: solid 2px;
+        }
+        tbody {
+            border: solid 2px;
+            margin: 0;
+        }
+        tr {
+            border: solid 1px;
+        }
+        td {
+            border: solid 1px;
+            text-align: center;
+            font-family: '標楷體';
+        }
+        form {
+            margin: 0 10%;
+        }
+        fieldset {
+            margin: 0%;
+        }
+        .container-fluid {
+            margin: 0;
+        }
+        .col-sm-4-style {
+            background-color: rgb(215, 237, 250);
+        }
+        .col-sm-8-style {
+            background-color: rgb(255, 227, 255);
+        }
+        .NAME_title {
+            text-align: center;
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .NAME_title-content {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .HW_title {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 800;
+        }
+        .HW_title-content {
+            text-align: center;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .HW_title-content-word {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .form-title {
+            text-align: center;
+            font-size: 26px;
+            font-family: '標楷體';
+            font-weight: 700;
+        }
+        .form-sex {
+            font-size: 16px;
+            text-align: center;
+            font-family: '標楷體';
+            font-weight: 500;
+        }
+        .from-content {
+            font-size: 16px;
+            text-align: center;
+            font-family: '標楷體';
+            font-weight: 500;
+            margin: 0 30%;
+        }
+        .table {
+            margin: 0;
+            padding: 0;
+        }
+        
+    </style>
+  </head>
+  <body>
+    <h1>HW09</h1>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4 col-sm-4-style">
+                <div class="row">
+                    <div class="col-sm-6 NAME_title">
+                        學號
+                    </div>
+                    <div class="col-sm-6 NAME_title">
+                        姓名
+                    </div>
+                    <div class="col-sm-6 NAME_title-content">
+                        1074400
+                    </div>
+                    <div class="col-sm-6 NAME_title-content">
+                        趙芳宜
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <!--title-->
+                    <div class="col-sm-4 HW_title">
+                        Deadline
+                    </div>
+                    <div class="col-sm-4 HW_title">
+                        作業編號
+                    </div>
+                    <div class="col-sm-4 HW_title">
+                        作業主要練習議題
+                    </div>
+
+                    <!--content_1-->
+                    <div class="col-sm-4 HW_title-content">
+                        2021/03/23
+                    </div>
+                    <div class="col-sm-4 HW_title-content">
+                        ＨＷ０１
+                    </div>
+                    <div class="col-sm-4 HW_title-content">
+                        練習平台線上作業
+                    </div>
+
+                    <!--content_2-->
+                    <div class="col-sm-4 HW_title-content">
+                        2021/03/30
+                    </div>
+                    <div class="col-sm-4 HW_title-content">
+                        <a href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW02/HW02.html">ＨＷ０２</a>
+                    </div>
+                    <div class="col-sm-4 HW_title-content HW_title-content-word">
+                        Table表格製作
+                    </div>
+                    
+                    <!--content_3-->
+                    <div class="col-sm-4 HW_title-content">
+                        2021/04/13
+                    </div>
+                    <div class="col-sm-4 HW_title-content">
+                        <a href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW03/HW03.html">ＨＷ０３</a>
+                    </div>
+                    <div class="col-sm-4 HW_title-content HW_title-content-word">
+                        Div/Span
+                    </div>
+
+                    <!--content_4-->
+                    <div class="col-sm-4 HW_title-content">
+                        2021/04/27
+                    </div>
+                    <div class="col-sm-4 HW_title-content">
+                        <a href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW04/HW04.html">ＨＷ０４</a>
+                    </div>
+                    <div class="col-sm-4 HW_title-content HW_title-content-word">
+                        Style/Box-Shadow
+                    </div>
+
+                    <!--content_5-->
+                    <div class="col-sm-4 HW_title-content">
+                        2021/05/04
+                    </div>
+                    <div class="col-sm-4 HW_title-content">
+                        <a href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW05/HW05.html">ＨＷ０５</a>
+                    </div>
+                    <div class="col-sm-4 HW_title-content HW_title-content-word">
+                        Internal Style Sheet
+                    </div>
+
+                    <!--content_6-->
+                    <div class="col-sm-4 HW_title-content">
+                        2021/05/23
+                    </div>
+                    <div class="col-sm-4 HW_title-content">
+                        <a href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW06/HW06.html">ＨＷ０６</a>
+                    </div>
+                    <div class="col-sm-4 HW_title-content HW_title-content-word">
+                        HTML Layout
+                    </div>
+
+                    <!--content_7-->
+                    <div class="col-sm-4 HW_title-content">
+                        2021/05/30
+                    </div>
+                    <div class="col-sm-4 HW_title-content">
+                        <a href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW07/HW07.html">ＨＷ０７</a>
+                    </div>
+                    <div class="col-sm-4 HW_title-content HW_title-content-word">
+                        Input/Output
+                    </div>
+
+                    <!--content_8-->
+                    <div class="col-sm-4 HW_title-content">
+                        2021/06/05
+                    </div>
+                    <div class="col-sm-4 HW_title-content">
+                        <a href="https://shizu227.github.io/test/HW08.html">ＨＷ０８</a>
+                    </div>
+                    <div class="col-sm-4 HW_title-content HW_title-content-word">
+                        Bootstrap
+                    </div>
+
+                    <!--content_9-->
+                    <div class="col-sm-4 HW_title-content">
+                        2021/06/08
+                    </div>
+                    <div class="col-sm-4 HW_title-content">
+                        <a href="https://shizu227.github.io/test/HW09.html">ＨＷ０９</a>
+                    </div>
+                    <div class="col-sm-4 HW_title-content HW_title-content-word">
+                        Onclick
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8 col-sm-8-style">
+                <hgroup>
+                    <h1>計算BMI</h1>
+                    <fieldset>
+                        <legend class="form-title">
+                            基本資料
+                        </legend>
+                        <form>
+                            <div class="from-content">
+                                <div class="form-sex">
+                                    性別：
+                                    <input type="radio" name="sex">男 
+                                    <input type="radio" name="sex">女
+                                </div>    
+                                你的身高（公分）：
+                                <br>
+                                <input type="text" id="height" name="height" />
+                                <br>
+                                你的體重（公斤）：
+                                <br>
+                                <input type="text" id="weight" name="weight" />
+                                <br>
+                                <input type="button" onclick="fun1()" value="計算BMI" />
+                                <br>
+                                你的ＢＭＩ
+                                <br>
+                                <input type="text" id="result" name="result" />
+                                <br>
+                                <input type="reset" value="重新計算" />
+                            </div>
+                        </form>
+                    </fieldset>
+                    <fieldset>
+                        <legend class="form-title">
+                            參考表格
+                        </legend>
+                        <div class="table">
+                            <table style="margin: 0; width: 100%;">
+                                <tbody>
+                                    <tr>
+                                       <td></td>
+                                        <td>身體質量指數BMI</td>
+                                        <td>腰圍</td>
+                                    </tr>
+                                    <tr>
+                                        <td>體重過輕</td>
+                                        <td>BMI ＜ 18.5</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>正常範圍</td>
+                                        <td>18.5 ≦ BMI ＜ 24</td>
+                                        <td>
+                                            男性：≦ 90公分
+                                            <br>
+                                            女性：≦ 80公分
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>體重過重</td>
+                                        <td>24 ≦ BMI ＜ 27</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>輕度肥胖</td>
+                                        <td>27 ≦ BMI ＜ 30</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>中度肥胖</td>
+                                        <td>30 ≦ BMI ＜ 35</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>重度肥胖</td>
+                                        <td>BMI ≧ 35</td>
+                                        <td>-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
+                </hgroup>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
