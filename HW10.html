@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+        <title>HW010</title>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+        <script>
+            function BMI(){
+                var height_2 = document.getElementById("height_2").value;
+                var weight_2 = document.getElementById("weight_2").value;
+                var result=(weight_2/((height_2/100)**2)).toFixed(2);
+                document.getElementById("result").value = result;
+            }
+            function ShowTime(){
+                var NowDate=new Date();
+                var hr=NowDate.getHours();
+                var m=NowDate.getMinutes();
+                var s=NowDate.getSeconds();　
+                document.getElementById('showbox').innerHTML = hr +'時'+ m +'分'+ s +'秒';
+                setTimeout('ShowTime()',1000);
+            }
+        </script>
+        <style type="text/css">
+            #test div div{
+                display: inline;
+            }
+            a {
+                color: rgb(255, 255, 255);
+            }
+            a:hover {
+                text-decoration: underline;
+                color: rgb(255, 255, 255);
+            }
+            :link, :visited {
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body onload="ShowTime()" class="bg-dark bg-gradient">
+        <header>
+            <div class="container-fluid">
+                <div class="row fs-1 fw-bolder text-center text-white bg-dark">
+                    <a style="text-align: left;" href="https://shizu227.github.io/test/HW10.html">HW10</a>
+                </div>
+            </div>
+        </header>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            
+            <div class="mt-2 collapse con border-top border-secondary" id="navbarToggleExternalContent">
+                <div class="bg-dark p-4">
+                    <span class="text-white d-flex" id="test">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    ＨＷ０１
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW02/HW02.html">ＨＷ０２</a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW03/HW03.html">ＨＷ０３</a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW04/HW04.html">ＨＷ０４</a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW05/HW05.html">ＨＷ０５</a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW06/HW06.html">ＨＷ０６</a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="https://un6ozystjizjujofoqwsqw-on.drv.tw/HW07/HW07.html">ＨＷ０７</a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="https://shizu227.github.io/test/HW08.html">ＨＷ０８</a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="https://shizu227.github.io/test/HW09.html">ＨＷ０９</a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="https://shizu227.github.io/test/HW10.html">ＨＷ１０</a>
+                                </div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </nav>
+        <main>
+            <article class="mt-4">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">第一種BMI做法</h5>
+                                    <p class="card-text"></p>
+                                        <form oninput="result.value=(parseInt(weight_1.value)/(parseInt(height_1.value)/100)**2).toFixed(2)">
+                                            <div class="from-content">
+                                                <div class="form-sex">
+                                                    性別：
+                                                    <input type="radio" name="sex">男 
+                                                    <input type="radio" name="sex">女
+                                                </div>
+                                                <p>你的身高（公分）：<input type="number" id="height_1" name="height_1" value="165" /></p>
+                                                <p>你的體重（公斤）：<input type="number" id="weight_1" name="weight_1" value="51" /></p>
+                                                <p>你的ＢＭＩ：<output name="result" for="weight-1 height-1">18.7</output></p>
+                                            </div>
+                                        </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card border-secondary" style="background-color: silver;">
+                                <div class="card-body">
+                                    <h5 class="card-title">第二種BMI做法</h5>
+                                    <p class="card-text"></p>
+                                        <form>
+                                            <div class="from-content">
+                                                <div class="form-sex">
+                                                    性別：
+                                                    <input type="radio" name="sex">男 
+                                                    <input type="radio" name="sex">女
+                                                </div>    
+                                                你的身高（公分）：
+                                                <br>
+                                                <input type="text" id="height_2" name="height_2" />
+                                                <br>
+                                                你的體重（公斤）：
+                                                <br>
+                                                <input type="text" id="weight_2" name="weight_2" />
+                                                <br>
+                                                <input type="button" onclick="BMI()" value="計算BMI" />
+                                                <br>
+                                                你的ＢＭＩ
+                                                <br>
+                                                <input type="text" id="result" name="result" />
+                                                <br>
+                                                <input type="reset" value="重新計算" />
+                                            </div>
+                                        </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
+        <footer>
+            <p class="text-end text-muted">
+                Updated on 2021/06/16 By Ham
+            </p>
+            <p class="text-end text-muted">
+                現在時間：<time id="showbox"></time>
+            </p>
+        </footer>
+    </body>
+</html>
